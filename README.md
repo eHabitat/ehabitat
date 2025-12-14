@@ -11,10 +11,9 @@
 </p>
 </p>
 
-# **eHabitat — Open-Source Time Series Dataset & Tools**
+# **eHabitat — An Open-Source Time-Series Dataset & Tools**
 
-**eHabitat** is an open-source project providing data, tools, and utilities for building and evaluating models related to energy monitoring, appliance-level analysis, and carbon-footprint estimation.
-It offers a unified framework that simplifies working with electricity consumption data, running experiments, and developing data-driven energy applications.
+**eHabitat** is a framework and dataset archive for causal and generative time-series analysis of energy use and carbon footprint. It offers a unified framework that simplifies working with electricity consumption data, running experiments, and developing data-driven energy applications.
 
 ## 🚀 Features
 
