@@ -1,81 +1,76 @@
 
 <!DOCTYPE html>
 
-<html data-content_root="../" data-theme="light" lang="en">
+<html data-theme="light" lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.19: https://docutils.sourceforge.io/" name="generator"/>
 <title>Introduction to xarray, InferenceData for eHabitat — eHabitat</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-<!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-<noscript>
-<style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-</noscript>
 <!-- Loaded before other Sphinx assets -->
-<link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="../_static/pygments.css?v=581237fb" rel="stylesheet" type="text/css"/>
-<link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
-<link href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css"/>
-<link href="../_static/jupyter-sphinx.css?v=572af1d6" rel="stylesheet" type="text/css"/>
+<link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/jupyter-sphinx.css" rel="stylesheet" type="text/css"/>
 <link href="../_static/thebelab.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
-<link href="../_static/custom.css?v=45766ed9" rel="stylesheet" type="text/css"/>
-<!-- So that users can add custom icons -->
-<script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+<link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/custom.css" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
-<link as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<script src="../_static/documentation_options.js?v=fb0c83f7"></script>
-<script src="../_static/doctools.js?v=a6d80eb4"></script>
-<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-<script src="../_static/copybutton.js?v=30646c52"></script>
+<link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/sphinx_highlight.js"></script>
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
 <script src="../_static/thebelab-helper.js"></script>
-<script src="../_static/design-tabs.js?v=f930bc37"></script>
+<script src="../_static/design-tabs.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <script>DOCUMENTATION_OPTIONS.pagename = 'archive/XarrayforXGenTS';</script>
-<link href="../_static/favicon.ico" rel="icon"/>
+<link href="../_static/favicon.ico" rel="shortcut icon"/>
 <link href="../about.html" rel="author" title="About these documents"/>
 <link href="../genindex.html" rel="index" title="Index"/>
 <link href="../search.html" rel="search" title="Search"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
-<meta content="" name="docsearch:version"/>
-<meta content="True" name="docbuild:last-update"/>
 </head>
 <body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
-<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
-<div id="pst-scroll-pixel-helper"></div>
-<button class="btn rounded-pill" id="pst-back-to-top" type="button">
-<i class="fa-solid fa-arrow-up"></i>Back to top</button>
-<dialog id="pst-search-dialog">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
 <form action="../search.html" class="bd-search d-flex align-items-center" method="get">
 <i class="fa-solid fa-magnifying-glass"></i>
-<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
 <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-</dialog>
-<div class="pst-async-banner-revealer d-none">
-<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</form></div>
 </div>
-<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
 <div class="bd-header__inner bd-page-width">
-<button aria-label="Site navigation" class="pst-navbar-icon sidebar-toggle primary-toggle">
+<label class="sidebar-toggle primary-toggle" for="__primary">
 <span class="fa-solid fa-bars"></span>
-</button>
-<div class="col-lg-3 navbar-header-items__start">
+</label>
+<div class="navbar-header-items__start">
 <div class="navbar-item">
 <a class="navbar-brand logo" href="../index.html">
 <p class="title logo__title">eHabitat</p>
@@ -83,94 +78,107 @@
 </div>
 <div class="col-lg-9 navbar-header-items">
 <div class="me-auto navbar-header-items__center">
-<div class="navbar-item">
-<nav>
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
 <ul class="bd-navbar-elements navbar-nav">
 </ul>
 </nav></div>
 </div>
 <div class="navbar-header-items__end">
 <div class="navbar-item navbar-persistent--container">
-<button aria-label="Search" class="btn search-button-field search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass"></i>
-<span class="search-button__default-text">Search</span>
-<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
 </div>
 <div class="navbar-item">
-<button aria-label="Color mode" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" data-bs-placement="bottom" data-bs-title="Color mode" data-bs-toggle="tooltip">
-<i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
-<i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
-<i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
-</button></div>
-<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
-<a class="nav-link pst-navbar-icon" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/XgenTimeSeries/xgen-timeseries" rel="noopener" target="_blank" title="GitHub"><i aria-hidden="true" class="fa-brands fa-github fa-lg"></i>
-<span class="sr-only">GitHub</span></a>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/XgenTimeSeries/xgen-timeseries" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
 </li>
 </ul></div>
 </div>
 </div>
 <div class="navbar-persistent--mobile">
-<button aria-label="Search" class="btn search-button-field search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass"></i>
-<span class="search-button__default-text">Search</span>
-<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
 </div>
-<button aria-label="On this page" class="pst-navbar-icon sidebar-toggle secondary-toggle">
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
 <span class="fa-solid fa-outdent"></span>
-</button>
+</label>
 </div>
-</header>
+</nav>
 <div class="bd-container">
 <div class="bd-container__inner bd-page-width">
-<dialog id="pst-primary-sidebar-modal"></dialog>
-<div class="bd-sidebar-primary bd-sidebar hide-on-wide" id="pst-primary-sidebar">
+<div class="bd-sidebar-primary bd-sidebar hide-on-wide">
 <div class="sidebar-header-items sidebar-primary__section">
 <div class="sidebar-header-items__center">
-<div class="navbar-item">
-<nav>
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
 <ul class="bd-navbar-elements navbar-nav">
 </ul>
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
 <div class="navbar-item">
-<button aria-label="Color mode" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" data-bs-placement="bottom" data-bs-title="Color mode" data-bs-toggle="tooltip">
-<i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
-<i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
-<i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
-</button></div>
-<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
-<a class="nav-link pst-navbar-icon" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/XgenTimeSeries/xgen-timeseries" rel="noopener" target="_blank" title="GitHub"><i aria-hidden="true" class="fa-brands fa-github fa-lg"></i>
-<span class="sr-only">GitHub</span></a>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/XgenTimeSeries/xgen-timeseries" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
 </li>
 </ul></div>
 </div>
 </div>
 <div class="sidebar-primary-items__end sidebar-primary__section">
-<div class="sidebar-primary-item">
-<div class="flat" data-ea-manual="true" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" id="ethical-ad-placement">
-</div></div>
 </div>
+<div id="rtd-footer-container"></div>
 </div>
-<main class="bd-main" id="main-content" role="main">
+<main class="bd-main" id="main-content">
 <div class="bd-content">
 <div class="bd-article-container">
-<div class="bd-header-article d-print-none">
+<div class="bd-header-article">
 <div class="header-article-items header-article__inner">
 <div class="header-article-items__start">
 <div class="header-article-item">
-<nav aria-label="Breadcrumb" class="d-print-none">
-<ul class="bd-breadcrumbs">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
 <li class="breadcrumb-item breadcrumb-home">
 <a aria-label="Home" class="nav-link" href="../index.html">
 <i class="fa-solid fa-home"></i>
 </a>
 </li>
-<li aria-current="page" class="breadcrumb-item active"><span class="ellipsis">Introduction to xarray, InferenceData for eHabitat</span></li>
+<li aria-current="page" class="breadcrumb-item active">Introduction to xarray, InferenceData for eHabitat</li>
 </ul>
 </nav>
 </div>
@@ -178,9 +186,9 @@
 </div>
 </div>
 <div id="searchbox"></div>
-<article class="bd-article">
+<article class="bd-article" role="main">
 <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-xarray-inferencedata-for-ehabitat">
-<span id="xarray-for-ehabitat"></span><h1>Introduction to xarray, InferenceData for eHabitat<a class="headerlink" href="#introduction-to-xarray-inferencedata-for-ehabitat" title="Link to this heading">#</a></h1>
+<span id="xarray-for-ehabitat"></span><h1>Introduction to xarray, InferenceData for eHabitat<a class="headerlink" href="#introduction-to-xarray-inferencedata-for-ehabitat" title="Permalink to this heading">#</a></h1>
 <p>While eHabitat supports plotting from familiar data types, such as dictionaries and NumPy arrays, there are a couple of data structures central to eHabitat that are useful to know when using the library.</p>
 <p>They are</p>
 <ul class="simple">
@@ -189,7 +197,7 @@
 <li><p><a class="reference internal" href="../getting_started/XarrayforXGenTS.html#netcdf"><span class="std std-ref">netCDF</span></a></p></li>
 </ul>
 <section id="why-more-than-one-data-structure">
-<h2>Why more than one data structure?<a class="headerlink" href="#why-more-than-one-data-structure" title="Link to this heading">#</a></h2>
+<h2>Why more than one data structure?<a class="headerlink" href="#why-more-than-one-data-structure" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Bayesian_inference">Bayesian inference</a> generates numerous datasets that represent different aspects of the model. For example, in a single analysis, a Bayesian practitioner could end up with any of the following data.</p>
 <ul class="simple">
 <li><p>Prior Distribution for N number of variables</p></li>
@@ -203,18 +211,18 @@
 <p>For more detail, see the <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> structure specification <a class="reference internal" href="../schema/schema.html#schema"><span class="std std-ref">here</span></a>.</p>
 </section>
 <section id="why-not-pandas-dataframes-or-numpy-arrays">
-<h2>Why not Pandas Dataframes or NumPy Arrays?<a class="headerlink" href="#why-not-pandas-dataframes-or-numpy-arrays" title="Link to this heading">#</a></h2>
+<h2>Why not Pandas Dataframes or NumPy Arrays?<a class="headerlink" href="#why-not-pandas-dataframes-or-numpy-arrays" title="Permalink to this heading">#</a></h2>
 <p>Data from <a class="reference external" href="https://en.wikipedia.org/wiki/Probabilistic_programming">probabilistic programming</a> is naturally high dimensional. To add to the complexity eHabitat must handle the data generated from multiple Bayesian modeling libraries, such as PyMC3 and PyStan. This application is handled by the <em>xarray</em> package quite well. The xarray package lets users manage high dimensional data with human readable dimensions and coordinates quite easily.</p>
 <p><img alt="InferenceData Structure" src="archive/InferenceDataStructure.png"/></p>
 <p>Above is a visual representation of the data structures and their relationships. Although it seems more complex at a glance, the eHabitat devs believe that the usage of <em>xarray</em>, <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code>, and <em>netCDF</em> will simplify the handling, referencing, and serialization of data generated during Bayesian analysis.</p>
 </section>
 <section id="an-introduction-to-each">
-<h2>An introduction to each<a class="headerlink" href="#an-introduction-to-each" title="Link to this heading">#</a></h2>
+<h2>An introduction to each<a class="headerlink" href="#an-introduction-to-each" title="Permalink to this heading">#</a></h2>
 <p>To help get familiar with each, eHabitat includes some toy datasets. You can check the different ways to start an <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> <a class="reference internal" href="../getting_started/CreatingInferenceData.html#creating-inferencedata"><span class="std std-ref">here</span></a>. For illustration purposes, here we have shown only one example provided by the library. To start an <code class="docutils literal notranslate"><span class="pre">az.InferenceData</span></code>, sample can be loaded from disk.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the centered eight schools model</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">xgen</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xg</span>
+<span class="kn">import</span> <span class="nn">xgen</span> <span class="k">as</span> <span class="nn">xg</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">az</span><span class="o">.</span><span class="n">load_eHabitat_data</span><span class="p">(</span><span class="s2">"centered_eight"</span><span class="p">)</span>
 <span class="n">data</span>
@@ -3360,7 +3368,7 @@ Attributes:
 <p>It should be noted that the observed dataset contains only 8 data variables. Moreover, it doesn’t have a chain and draw dimension or coordinates unlike posterior. This difference in sizes is the motivating reason behind <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code>. Rather than force multiple different sized arrays into one array, or have users manage multiple objects corresponding to different datasets, it is easier to hold references to each <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code> in an <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> object.</p>
 </section>
 <section id="netcdf">
-<span id="id1"></span><h2>NetCDF<a class="headerlink" href="#netcdf" title="Link to this heading">#</a></h2>
+<span id="id1"></span><h2>NetCDF<a class="headerlink" href="#netcdf" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/">NetCDF</a> is a standard for referencing array oriented files. In other words, while <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code>s, and by extension <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code>, are convenient for accessing arrays in Python memory, <em>netCDF</em> provides a convenient mechanism for persistence of model data on disk. In fact, the netCDF dataset was the inspiration for <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> as netCDF4 supports the concept of groups. <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> merely wraps <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code> with the same functionality.</p>
 <p>Most users will not have to concern themselves with the <em>netCDF</em> standard but for completeness it is good to make its usage transparent. It is also worth noting that the netCDF4 file standard is interoperable with HDF5 which may be familiar from other contexts.</p>
 <p>Earlier in this tutorial <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> was loaded from a <em>netCDF</em> file</p>
@@ -3387,10 +3395,10 @@ Attributes:
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="additional-reading">
-<h1>Additional Reading<a class="headerlink" href="#additional-reading" title="Link to this heading">#</a></h1>
+<h1>Additional Reading<a class="headerlink" href="#additional-reading" title="Permalink to this heading">#</a></h1>
 <p>Additional documentation and tutorials exist for xarray and netCDF4. Check the following links:</p>
 <section id="inferencedata">
-<h2><code class="docutils literal notranslate"><span class="pre">InferenceData</span></code><a class="headerlink" href="#inferencedata" title="Link to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">InferenceData</span></code><a class="headerlink" href="#inferencedata" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../getting_started/WorkingWithInferenceData.html#working-with-inferencedata"><span class="std std-ref">Working with InferenceData</span></a>: Tutorial covering the most common operations with <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> objects</p></li>
 <li><p><a class="reference internal" href="../getting_started/CreatingInferenceData.html#creating-inferencedata"><span class="std std-ref">Creating InferenceData</span></a>: Cookbook with examples of generating InferenceData objects from multiple sources, both external inference libraries like</p></li>
@@ -3399,14 +3407,14 @@ Attributes:
 </ul>
 </section>
 <section id="xarray">
-<h2>xarray<a class="headerlink" href="#xarray" title="Link to this heading">#</a></h2>
+<h2>xarray<a class="headerlink" href="#xarray" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>For getting to know xarray, check <a class="reference external" href="http://xarray.pydata.org/en/stable/why-xarray.html">xarray documentation</a></p></li>
-<li><p>Feel free to watch the Q/A session about xarray at <a class="reference external" href="https://www.youtube.com/watch?v=X0pAhJgySxk&amp;amp;t=949s">xarray lightning talk at SciPy 2015</a></p></li>
+<li><p>Feel free to watch the Q/A session about xarray at <a class="reference external" href="https://www.youtube.com/watch?v=X0pAhJgySxk&amp;t=949s">xarray lightning talk at SciPy 2015</a></p></li>
 </ul>
 </section>
 <section id="id2">
-<h2>NetCDF<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>NetCDF<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Get to know the introduction of netCDF at the official website  of <a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/docs/.">NetCDF  documentation</a></p></li>
 <li><p>Netcdf4-python library is a used to read/write netCDF files in both netCDF4 and netCDF3 format. Learn more about it by visitng its API documentation at <a class="reference external" href="http://unidata.github.io/netcdf4-python/">NetCDF4 API documentation</a></p></li>
@@ -3416,18 +3424,15 @@ Attributes:
 </section>
 </section>
 </article>
-<footer class="prev-next-footer d-print-none">
-<div class="prev-next-area">
-</div>
+<footer class="bd-footer-article">
 </footer>
 </div>
-<dialog id="pst-secondary-sidebar-modal"></dialog>
-<div class="bd-sidebar-secondary bd-toc" id="pst-secondary-sidebar"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 <div class="sidebar-secondary-item">
-<div class="page-toc tocsection onthispage" id="pst-page-navigation-heading-2">
+<div class="page-toc tocsection onthispage">
 <i class="fa-solid fa-list"></i> On this page
   </div>
-<nav aria-labelledby="pst-page-navigation-heading-2" class="bd-toc-nav page-toc">
+<nav class="bd-toc-nav page-toc">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction to xarray, InferenceData for eHabitat</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-more-than-one-data-structure">Why more than one data structure?</a></li>
@@ -3460,12 +3465,12 @@ Attributes:
 </div>
 </div>
 <div class="sidebar-secondary-item">
-<div aria-label="source link" role="note">
-<h3>This Page</h3>
-<ul class="this-page-menu">
-<li><a href="../_sources/archive/XarrayforXGenTS.ipynb.txt" rel="nofollow">Show Source</a></li>
-</ul>
-</div></div>
+<div class="tocsection sourcelink">
+<a href="../_sources/archive/XarrayforXGenTS.ipynb.txt">
+<i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+</div>
 </div></div>
 </div>
 <footer class="bd-footer-content">
@@ -3474,8 +3479,8 @@ Attributes:
 </div>
 </div>
 <!-- Scripts loaded after <body> so the DOM is not blocked -->
-<script defer="" src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer="" src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+<script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 <script>
   $(document).ready(function () {
     const content = $('<div class="alert-danger">eHabitat docs will now be available at <a href="https://python.eHabitat.org">python.eHabitat.org</a>!</div>')
@@ -3494,10 +3499,8 @@ Attributes:
 </div>
 </div>
 <div class="footer-items__end">
-<div class="footer-item">
-<p class="theme-version">
-<!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
 </p></div>
 </div>
 </div>
