@@ -96,10 +96,11 @@ h3 {
     <img src="_static/images/ehabitat_logo.svg" alt="eHabitat Logo" />
   </div>
 </div>
-
+```
 
 ### eHabitat ```Archive```
 
+```{raw} html
 <table id="customers">
   <thead>
     <tr>
@@ -296,6 +297,7 @@ h3 {
     </tr>
   </tbody>
 </table>
+```
 
 
 ## Sponsors and Institutional Partners
