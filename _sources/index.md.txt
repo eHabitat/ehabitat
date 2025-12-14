@@ -123,7 +123,7 @@ h3 {
       <td>France</td>
       <td>I, V, P, Q, S</td>
       <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
-      <td><a href="https://eHabitattimeseries.github.io/eHabitat-timeseries/ess_datasets/index.html" target="_blank"> [1]</a> </td>
+      <td><a href="https://ehabitat.github.io/ehabitat/ess_datasets/index.html" target="_blank"> [1]</a> </td>
     </tr>
     <tr>
       <td>IDEAL</td>
