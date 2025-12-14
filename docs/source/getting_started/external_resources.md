@@ -11,11 +11,6 @@ Curated selection of PyMC guides and case studies.
 Examples authored by PyMC developers and expert users.
 ::::
 
-
-::::{grid-item-card}
-:img-top: https://raw.githubusercontent.com/stan-dev/logos/master/logo.png
-:link: https://mc-stan.org/users/documentation/case-studies
-
 **Stan case studies**
 
 The case studies on this page are intended to reflect best practices in Bayesian methodology and Stan programming.

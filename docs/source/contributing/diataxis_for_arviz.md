@@ -1,13 +1,13 @@
-(diataxis_for_TimeXAI)=
-# Diátaxis for TimeXAI
+(diataxis_for_eHabitat)=
+# Diátaxis for eHabitat
 
-TimeXAI documentation has the {doc}`diataxis:index` as a North Star.
+eHabitat documentation has the {doc}`diataxis:index` as a North Star.
 
-There are however some specificities to TimeXAI case and knowing Diátaxis alone
-is not enough to be able to understand TimeXAI doc structure and correctly place
+There are however some specificities to eHabitat case and knowing Diátaxis alone
+is not enough to be able to understand eHabitat doc structure and correctly place
 new content pages within it.
 At the same time, having a basic understanding of Diátaxis is needed to understand
-this page and the content structure in TimeXAI docs.
+this page and the content structure in eHabitat docs.
 
 These are:
 
@@ -19,18 +19,18 @@ These are:
 Diátaxis is a framework based around **user needs** in their exercise of a
 **practical craft** (more detail at {ref}`diataxis:needs` page in Diatáxis website).
 
-The scope of the TimeXAI website however is not limited to TimeXAI users nor it is limited to practical
-crafts like using TimeXAI or contributing to it.
+The scope of the eHabitat website however is not limited to eHabitat users nor it is limited to practical
+crafts like using eHabitat or contributing to it.
 
 After careful consideration, we decided to split the website into three components:
 two practical crafts, using and contributing
 (each of which follows Diátaxis independently of the other)
-and general information about the TimeXAI project,
+and general information about the eHabitat project,
 it's people, community, marketing info...
 which can nor should follow the Diátaxis framework.
 
 ## Strong visual component
-TimeXAI is a library with a strong visualization component.
+eHabitat is a library with a strong visualization component.
 This translates for example into some duplicity when it comes to reference content.
 
 Both the {ref}`example_gallery` and the {ref}`api` pages are reference content.
@@ -41,10 +41,10 @@ links to the respective API page.
 This allows users who know the name of the function or who want to check the options
 available for the function they are currently using to quickly find it in the
 API reference while also allowing users who know how a plot looks but don't know
-their name nor the right TimeXAI function to find it in the Example Gallery.
+their name nor the right eHabitat function to find it in the Example Gallery.
 
 ## Work in progress
-In addition, TimeXAI documentation itself and the application of Diátaxis to it
+In addition, eHabitat documentation itself and the application of Diátaxis to it
 is still an active work in progress. That means that some pages will not
 match what is described in {ref}`content_structure` because their updating to
 enforce Diátaxis is still pending.

@@ -1,9 +1,9 @@
 
 # Reproducing Experiments
-This file gives instructions on how to reproduce the findings in the TimeXAI paper. These experiments will be organized by structure of the paper, so please reference those sections.
+This file gives instructions on how to reproduce the findings in the eHabitat paper. These experiments will be organized by structure of the paper, so please reference those sections.
 
-## Training TimeXAI
-Scripts used to train TimeXAI models are included in `experiments/<dataset>/bc_model_ptype.py`. Within these scripts, you can change hyperparameter choices and see usage for setting up the model, training function, loss functions, and more. Before training, please replace the path to the trained time series predictor that you wish to explain. Then, run:
+## Training eHabitat
+Scripts used to train eHabitat models are included in `experiments/<dataset>/bc_model_ptype.py`. Within these scripts, you can change hyperparameter choices and see usage for setting up the model, training function, loss functions, and more. Before training, please replace the path to the trained time series predictor that you wish to explain. Then, run:
 ```
 python bc_model_ptype.py
 ```
@@ -18,8 +18,8 @@ python3 saliency_exp_synth.py \
     --split_no -1 \
     --model_path <MODEL_PATH>
 ```
-`EXP_METHOD` is replaced with the explainability method you wish to evaluate (see the script for options). Use `ours` for TimeXAI.
-`DATASET` is replaced with the name of the dataset on which you wish to evaluate the method (see the script for options). `MODEL_PATH` is the path to the model to explain. Use the path to a time series explainer for all other explainers, but if evaluating TimeXAI, use the path to the TimeXAI trained model.
+`EXP_METHOD` is replaced with the explainability method you wish to evaluate (see the script for options). Use `ours` for eHabitat.
+`DATASET` is replaced with the name of the dataset on which you wish to evaluate the method (see the script for options). `MODEL_PATH` is the path to the model to explain. Use the path to a time series explainer for all other explainers, but if evaluating eHabitat, use the path to the eHabitat trained model.
 
 
 ## R2: Occlusion experiments

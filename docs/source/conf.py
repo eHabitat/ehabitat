@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# TimeXAI documentation build configuration file, created by
+# eHabitat documentation build configuration file, created by
 # sphinx-quickstart on Wed Apr 11 18:33:59 2018.
 #
 # This file is execfile()d with the current directory set to its
@@ -22,10 +22,10 @@ import sys
 from typing import Dict, Any
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-## import TimeXAI
+## import eHabitat
 
-#TimeXAI.rcParams["data.load"] = "eager"
-#TimeXAI.Numba.disable_numba()
+#eHabitat.rcParams["data.load"] = "eager"
+#eHabitat.Numba.disable_numba()
 
 # -- General configuration ------------------------------------------------
 
@@ -127,7 +127,7 @@ numpydoc_xref_ignore = {
 numpydoc_xref_aliases = {
     "Labeller": ":ref:`Labeller <labeller_api>`",
     "ndarray": ":class:`~numpy.ndarray`",
-    #"InferenceData": ":class:`~TimeXAI.InferenceData`",
+    #"InferenceData": ":class:`~eHabitat.InferenceData`",
     "matplotlib_axes": ":class:`matplotlib Axes <matplotlib.axes.Axes>`",
     "bokeh_figure": ":class:`Bokeh Figure <bokeh.plotting.figure>`",
 
@@ -139,14 +139,14 @@ default_role = "code"
 suppress_warnings = ["mystnb.unknown_mime_type"]
 
 # General information about the project.
-project = "TimeXAI"
-copyright = "2023, TimeXAI devs"
-author = "TimeXAI devs"
+project = "eHabitat"
+copyright = "2023, eHabitat devs"
+author = "eHabitat devs"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
-version = "" #TimeXAI.__version__
+version = "" #eHabitat.__version__
 if os.environ.get("READTHEDOCS", False):
     rtd_version = os.environ.get("READTHEDOCS_VERSION", "")
     if "." not in rtd_version and rtd_version.lower() != "stable":
@@ -187,15 +187,17 @@ todo_include_todos = False
 #
 html_theme = "pydata_sphinx_theme"
 
+html_title = "eHabitat"
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
     #"prev_next_buttons_location": None,
-    "logo": {
-        "image_light": "logo.png",
-        "image_dark": "logo_dark.png",
-    },
+    # "logo": {
+    #     "image_light": "logo.png",
+    #     "image_dark": "logo_dark.png",
+    # },
     # https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/header-links.html#fontawesome-icons
     "icon_links": [
         {
@@ -205,12 +207,12 @@ html_theme_options = {
         },
         # {
         #     "name": "Twitter",
-        #     "url": "https://twitter.com/TimeXAI_devs",
+        #     "url": "https://twitter.com/eHabitat_devs",
         #     "icon": "fa-brands fa-twitter",
         # },
         # {
         #     "name": "Mastodon",
-        #     "url": "https://bayes.club/@TimeXAI",
+        #     "url": "https://bayes.club/@eHabitat",
         #     "icon": "fa-brands fa-mastodon",
         # },
     ],
@@ -221,12 +223,13 @@ html_theme_options = {
     "use_edit_page_button": True,
     "article_footer_items": [], #["prev-next.html"],
 }
+
 html_context = {
     "display_github": False, # Add 'Edit on Github' link instead of 'View page source'
     "last_updated": True,
     "commit": False,
-    "github_user": "TimeXAI-devs",
-    "github_repo": "TimeXAI",
+    "github_user": "eHabitat-devs",
+    "github_repo": "eHabitat",
     "github_version": "main",
     "doc_path": "docs/source/",
     "default_mode": "light",
@@ -252,11 +255,11 @@ html_additional_pages = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "TimeXAI"
+htmlhelp_basename = "eHabitat"
 
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-html_short_title = "TimeXAI"
+html_short_title = "eHabitat"
 
 
 # The name of an image file (relative to this directory) to use as a favicon of
@@ -284,14 +287,14 @@ latex_elements: Dict[str, str] = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
-latex_documents = [(master_doc, "TimeXAI.tex", "TimeXAI Documentation", "TimeXAI devs", "manual")]
+latex_documents = [(master_doc, "eHabitat.tex", "eHabitat Documentation", "eHabitat devs", "manual")]
 
 
 # -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, "TimeXAI", "TimeXAI Documentation", [author], 1)]
+man_pages = [(master_doc, "eHabitat", "eHabitat Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output -------------------------------------------
@@ -302,10 +305,10 @@ man_pages = [(master_doc, "TimeXAI", "TimeXAI Documentation", [author], 1)]
 texinfo_documents = [
     (
         master_doc,
-        "TimeXAI",
-        "TimeXAI Documentation",
+        "eHabitat",
+        "eHabitat Documentation",
         author,
-        "TimeXAI",
+        "eHabitat",
         "One line description of project.",
         "Miscellaneous",
     )
@@ -348,7 +351,7 @@ intersphinx_mapping = {
     "sphinx-primer": ("https://sphinx-primer.readthedocs.io/en/latest/", None),
     "sphinx": ("https://www.sphinx-doc.org/en/master/", None),
     "diataxis": ("https://diataxis.fr/", None),
-    "TimeXAI_org": ("https://www.TimeXAI.org/en/latest/", None),
+    "eHabitat_org": ("https://www.eHabitat.org/en/latest/", None),
     "python": ("https://docs.python.org/3/", None),
 }
 

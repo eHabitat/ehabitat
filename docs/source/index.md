@@ -5,13 +5,16 @@ sd_hide_title: true
 
 <!-- CSS overrides on the homepage only -->
 <style>
+/* Adjusting the content width on homepage */
 .bd-main .bd-content .bd-article-container {
-  max-width: 70rem; /* Make homepage a little wider instead of 60em */
+  max-width: 70rem; /* Increase homepage width from 60rem to 70rem */
 }
-/* Extra top/bottom padding to the sections */
+
+/* Add extra padding to sections */
 article.bd-article section {
   padding: 3rem 0 7rem;
 }
+
 /* Override all h1 headers except for the hidden ones */
 h1:not(.sd-d-none) {
   font-weight: bold;
@@ -20,85 +23,82 @@ h1:not(.sd-d-none) {
   margin-bottom: 4rem;
 }
 
-/* Override all h3 headers that are not in hero */
-h3:not(#hero h3) {
-  font-weight: bold;
-  text-align: center;
+/* Override all h3 headers except those in the hero section */
+#hero h3 {
+  font-weight: normal; /* Change h3 in hero to normal weight */
 }
+
+h3 {
+  font-weight: bold;
+}
+
+/* Hero layout */
+#hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+#hero-left {
+    max-width: 476px;
+    width: 100%;
+    margin: auto 0;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 </style>
 
+
 (homepage)=
-# TimeXAI: Exploratory analysis of Energy models
+# eHabitat: Exploratory analysis of Energy models
 
+
+
+```{raw} html
 <div id="hero">
+  <!-- Left section for title, description, and buttons -->
+  <div id="hero-left">
+    <h2 style="font-size: 50px; font-weight: bold; margin: 2rem auto 0;">eHabitat</h2>
+    <h3 style="font-weight: normal; margin-top: 0;">
+      An Interactive Framework for Energy Monitoring & Climate Awareness
+    </h3>
+    <p>
+      eHabitat is designed to enhance the understanding of energy consumption patterns and climate-related impacts through real-time, generative time series analysis.
+      <br>
+      Built on PyTorch, eHabitat can be easily installed via pip.
+    </p>
 
-<div id="hero-left">  <!-- Start Hero Left -->
-  <h2 style="font-size: 50px; font-weight: bold; margin: 2rem auto 0;">TimeXAI</h2>
-  <h3 style="font-weight: bold; margin-top: 0;">An eXplainable framework for Generative Time Series</h3>
-  <p>
-  Designed to improve the performance of existing models using generated data. It generates novel datasets based on past or current real-world data, enabling the model to learn and improve from this valuable additional information. TimeXAI also serves as an archive for a wide range of energy-related datasets. <br> 
-  It's based on PyTorch and can be installed using pip.
-	  
-  </p>
+    <div class="homepage-button-container">
+      <div class="homepage-button-container-row">
+        <a href="./getting_started/index.html" class="homepage-button primary-button">Get Started</a>
+        <a href="./archive/index.html" class="homepage-button secondary-button">Archive</a>
+      </div>
 
-<div class="homepage-button-container">
-  <div class="homepage-button-container-row">
-      <a href="./getting_started/index.html" class="homepage-button primary-button">Get Started</a>
-      <a href="./archive/index.html" class="homepage-button secondary-button">Archive</a>
-      <a href="https://colab.research.google.com/github/XgenTimeSeries/xgen-timeseries/blob/master/tutorials/PSA_GAN_in_XGenTimeSeries.ipynb">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+      <div class="homepage-button-container-row">
+        <a href="./archive/" class="homepage-button-link">
+          See Archive Reference
+          <svg class="svg-icon" viewBox="0 0 20 20">
+            <path fill="none" d="M1.729,9.212h14.656l-4.184-4.184..." />
+          </svg>
+        </a>
+      </div>
+    </div>
   </div>
-  <div class="homepage-button-container-row">
-      <a href="./archive/" class="homepage-button-link">See Archive Reference <svg class="svg-icon" viewBox="0 0 20 20"> <path fill="none" d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0
-	l5.481,5.482c0.018,0.014,0.037,0.019,0.053,0.034c0.181,0.181,0.242,0.425,0.209,0.66c-0.004,0.038-0.012,0.071-0.021,0.109
-	c-0.028,0.098-0.075,0.188-0.143,0.271c-0.021,0.026-0.021,0.061-0.045,0.085c-0.015,0.016-0.034,0.02-0.051,0.033l-5.483,5.483
-	c-0.306,0.307-0.802,0.307-1.106,0c-0.307-0.305-0.307-0.801,0-1.105l4.184-4.185H1.729c-0.436,0-0.788-0.353-0.788-0.788
-	S1.293,9.212,1.729,9.212z"></path></svg></a>
+
+  <div id="hero-right">
+    <img src="_static/images/ehabitat_logo.svg" alt="eHabitat Logo" />
   </div>
 </div>
-</div>  <!-- End Hero Left -->
-
-<div id="hero-right">  <!-- Start Hero Right -->
-
-::::::{grid} 1 2 2 2
-:gutter: 2
-
-:::::{grid-item-card}
-:link: example_plot_trace_bars
-:link-type: ref
-:shadow: none
-:class-card: example-gallery
-
-:::{div} example-img-plot-overlay
-Analysis bottelneck Generative model `model.explain()`
-:::
-
-:::{image} _static/images/generative.png
-:::
-:::::
-
-:::::{grid-item-card}
-:link: example_plot_forest_mixed
-:link-type: ref
-:shadow: none
-:class-card: example-gallery
-
-:::{div} example-img-plot-overlay
-Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
-:::
-
-:::{image} _static/images/archive.png
-:::
-:::::
-::::::
-
-<!-- grid ended above, do not put anything on the right of markdown closings -->
-
-</div>  <!-- End Hero Right -->
-</div>  <!-- End Hero -->
 
 
-### TimeXAI ```Archive```
+### eHabitat ```Archive```
 
 <table id="customers">
   <thead>
@@ -115,33 +115,33 @@ Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
   </thead>
   <tbody>
     <tr>
-      <td>TimeXAI-ESS(Ours)</td>
+      <td>eHabitat-ESS(Ours)</td>
       <td>1Hz</td>
-      <td>6 month</td>
+      <td>6 months</td>
       <td>Residential</td>
       <td>France</td>
-      <td>I,V, P,Q, S</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
-      <td><a href="https://xgentimeseries.github.io/xgen-timeseries/ess_datasets/index.html" target="_blank"> [1]</a> </td>
+      <td>I, V, P, Q, S</td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://eHabitattimeseries.github.io/eHabitat-timeseries/ess_datasets/index.html" target="_blank"> [1]</a> </td>
     </tr>
     <tr>
       <td>IDEAL</td>
       <td>1Hz</td>
-      <td>18 month</td>
+      <td>18 months</td>
       <td>Residential</td>
       <td>UK</td>
       <td>P, S</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://datashare.ed.ac.uk/handle/10283/3647" target="_blank"> [2]</a> </td>
     </tr>
     <tr>
       <td>Enertalk</td>
       <td>15 Hz</td>
-      <td>3 day</td>
+      <td>3 days</td>
       <td>Residential</td>
       <td>South Korea</td>
-      <td>P,Q</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td>P, Q</td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://www.nature.com/articles/s41597-019-0212-5" target="_blank"> [3]</a> </td>
     </tr>
     <tr>
@@ -151,7 +151,7 @@ Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
       <td>Residential</td>
       <td>Brazil</td>
       <td>P, S</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://pessoal.dainf.ct.utfpr.edu.br/douglasrenaux/LIT_Dataset/" target="_blank"> [4]</a> </td>
     </tr>
     <tr>
@@ -160,8 +160,8 @@ Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
       <td>2 years</td>
       <td>Residential</td>
       <td>Canada</td>
-      <td>P, S,I</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td>P, S, I</td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="http://ampds.org/" target="_blank"> [5]</a> </td>
     </tr>
     <tr>
@@ -170,8 +170,8 @@ Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
       <td>6 sec</td>
       <td>Individual appliance</td>
       <td>France</td>
-      <td>I,V</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td>I, V</td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://coolldataset.github.io/" target="_blank"> [6]</a> </td>
     </tr>
     <tr>
@@ -179,9 +179,9 @@ Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
       <td>44 kHz</td>
       <td>5 sec</td>
       <td>Individual appliance</td>
-      <td>Multiples</td>
+      <td>Multiple</td>
       <td>I</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://www.cs.cit.tum.de/dis/resources/whited/" target="_blank"> [7]</a> </td>
     </tr>
     <tr>
@@ -189,9 +189,9 @@ Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
       <td>1 Hz</td>
       <td>4+ years</td>
       <td>Residential</td>
-      <td>US</td>
+      <td>UK</td>
       <td>P</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://pureportal.strath.ac.uk/en/datasets/refit-electrical-load-measurements-cleaned" target="_blank"> [8]</a> </td>
     </tr>
     <tr>
@@ -200,8 +200,8 @@ Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
       <td>4+ years</td>
       <td>Residential</td>
       <td>US</td>
-      <td>P,S</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td>P, S</td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://ieee-dataport.org/" target="_blank"> [9]</a> </td>
     </tr>
     <tr>
@@ -210,18 +210,18 @@ Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
       <td>2 years</td>
       <td>Residential</td>
       <td>UK</td>
-      <td>I,V, P,Q, S</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td>I, V, P, Q, S</td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://www.nature.com/articles/sdata20157" target="_blank"> [10]</a> </td>
     </tr>
     <tr>
       <td>DRED</td>
       <td>1 Hz</td>
-      <td>6 month</td>
+      <td>6 months</td>
       <td>Residential</td>
       <td>Netherlands</td>
       <td>P</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://www.st.ewi.tudelft.nl/~akshay/dred/" target="_blank"> [11]</a> </td>
     </tr>
     <tr>
@@ -230,8 +230,8 @@ Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
       <td>5 sec</td>
       <td>Individual appliance</td>
       <td>US</td>
-      <td>I,V</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td>I, V</td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://energy.duke.edu/content/plug-load-appliance-identification-dataset-plaid" target="_blank"> [12]</a> </td>
     </tr>
      <tr>
@@ -240,18 +240,18 @@ Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
       <td>6 sec</td>
       <td>Residential</td>
       <td>Switzerland</td>
-      <td>I,V, P, pf</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td>I, V, P, pf</td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://sites.google.com/view/activities-prediction-202b/project-homepage/eco-dataset" target="_blank"> [13]</a> </td>
     </tr>
      <tr>
       <td>iAWE</td>
       <td>1 Hz</td>
-      <td>73 day</td>
+      <td>73 days</td>
       <td>Residential</td>
       <td>India</td>
       <td>I, V, P, Q, S, pf</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://iawe.github.io/" target="_blank"> [14]</a> </td>
     </tr>
      <tr>
@@ -261,17 +261,17 @@ Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
       <td>Individual appliance</td>
       <td>Germany</td>
       <td>P</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://github.com/areinhardt/tracebase" target="_blank"> [15]</a> </td>
     </tr>
      <tr>
       <td>REDD</td>
       <td>16.5 kHz</td>
-      <td>19 day</td>
+      <td>19 days</td>
       <td>Residential</td>
       <td>US</td>
       <td>I, V, P</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://tokhub.github.io/dbecd/links/redd.html" target="_blank"> [16]</a> </td>
     </tr>
      <tr>
@@ -280,18 +280,18 @@ Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
       <td>1 week</td>
       <td>Residential</td>
       <td>US</td>
-      <td>I,V</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td>I, V</td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td><a href="https://tokhub.github.io/dbecd/links/Blued.html" target="_blank"> [17]</a> </td>
     </tr>
      <tr>
       <td>Electricity AP</td>
-      <td>16mHz</td>
-      <td>4 month</td>
+      <td>16 mHz</td>
+      <td>4 months</td>
       <td>Residential</td>
       <td>Belgium</td>
       <td>P</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/TimeXAI-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
       <td> <a href="https://opennetzero.org/dataset/electricity-maps" target="_blank"> [18]</a> </td>
     </tr>
   </tbody>
@@ -299,7 +299,7 @@ Energy and electric mobility dataset `TimeXAI.dataset('streaming')`
 
 
 ## Sponsors and Institutional Partners
-<p style="font-weight: bold; margin-top: 0;"> With gratitude to <a href="https://www.ip-paris.fr/">Institute Polytechnique de Paris</a>, <a href="https://www.ox.ac.uk/">Oxford Institute of Mathematics</a>, OneTech TotalEnergies for generously supporting the development and maintenance of TimeXAI.</p>
+<p style="font-weight: bold; margin-top: 0;"> With gratitude to <a href="https://www.ip-paris.fr/">Institute Polytechnique de Paris</a>, <a href="https://www.ox.ac.uk/">Oxford Institute of Mathematics</a>, OneTech TotalEnergies for generously supporting the development and maintenance of eHabitat.</p>
   
 This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
@@ -308,27 +308,3 @@ This work is licensed under a
 
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
-
-
-<!-- ::::{grid} 1 3 3 3
-:::{grid-item}
-[![oxford_uni_logo](_static/sponsor_oxford.png)](https://www.ox.ac.uk/)
-:::
-:::{grid-item}
-[![plytechnique_uni_logo](_static/sponsor_polytechnique.png)](https://www.ip-paris.fr/)
-:::
-:::: -->
-
-
-:::{toctree}
-:maxdepth: 1
-:hidden:
-
-Getting Started<getting_started/index>
-TimeXAI Archive<archive/index>
-ESS dataset<ess_datasets/index>
-<!-- API Reference<api/index> -->
-Community <community>
-Contributing<contributing/index>
-About us<about>
-:::

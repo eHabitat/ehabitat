@@ -38,9 +38,9 @@ _alt_text: {Alt Text}
 """
 {Additional imports here}
 
-import timexai as xg
+import eHabitat as xg
 
-az.style.use("TimeXAI-doc")
+az.style.use("eHabitat-doc")
 
 {Additional code here}
 ```
@@ -56,9 +56,9 @@ Create `bokeh_plot_{plot_name}.py` under `matplotlib/`.
 """
 {Additional imports here}
 
-import timexai as xg
+import eHabitat as xg
 
-az.style.use("TimeXAI-doc")
+az.style.use("eHabitat-doc")
 
 {Additional code here}
 ```
