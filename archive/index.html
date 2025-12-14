@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="../" data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>eHabitat Archive — eHabitat</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+<noscript>
+<style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+</noscript>
+<!-- Loaded before other Sphinx assets -->
+<link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
+<link href="../_static/pygments.css?v=581237fb" rel="stylesheet" type="text/css"/>
+<link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
+<link href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css"/>
+<link href="../_static/jupyter-sphinx.css?v=572af1d6" rel="stylesheet" type="text/css"/>
+<link href="../_static/thebelab.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="../_static/custom.css?v=45766ed9" rel="stylesheet" type="text/css"/>
+<!-- So that users can add custom icons -->
+<script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" rel="preload"/>
+<script src="../_static/documentation_options.js?v=fb0c83f7"></script>
+<script src="../_static/doctools.js?v=a6d80eb4"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../_static/copybutton.js?v=30646c52"></script>
+<script src="../_static/thebelab-helper.js"></script>
+<script src="../_static/design-tabs.js?v=f930bc37"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'archive/index';</script>
+<link href="../_static/favicon.ico" rel="icon"/>
+<link href="../about.html" rel="author" title="About these documents"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+<meta content="" name="docsearch:version"/>
+<meta content="True" name="docbuild:last-update"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>Back to top</button>
+<dialog id="pst-search-dialog">
+<form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</dialog>
+<div class="pst-async-banner-revealer d-none">
+<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+<button aria-label="Site navigation" class="pst-navbar-icon sidebar-toggle primary-toggle">
+<span class="fa-solid fa-bars"></span>
+</button>
+<div class="col-lg-3 navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="../index.html">
+<p class="title logo__title">eHabitat</p>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item">
+<nav>
+<ul class="bd-navbar-elements navbar-nav">
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<button aria-label="Search" class="btn search-button-field search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
+<i class="fa-solid fa-magnifying-glass"></i>
+<span class="search-button__default-text">Search</span>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+</div>
+<div class="navbar-item">
+<button aria-label="Color mode" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" data-bs-placement="bottom" data-bs-title="Color mode" data-bs-toggle="tooltip">
+<i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+<i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+<i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+</button></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link pst-navbar-icon" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/XgenTimeSeries/xgen-timeseries" rel="noopener" target="_blank" title="GitHub"><i aria-hidden="true" class="fa-brands fa-github fa-lg"></i>
+<span class="sr-only">GitHub</span></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<button aria-label="Search" class="btn search-button-field search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
+<i class="fa-solid fa-magnifying-glass"></i>
+<span class="search-button__default-text">Search</span>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+</div>
+<button aria-label="On this page" class="pst-navbar-icon sidebar-toggle secondary-toggle">
+<span class="fa-solid fa-outdent"></span>
+</button>
+</div>
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<dialog id="pst-primary-sidebar-modal"></dialog>
+<div class="bd-sidebar-primary bd-sidebar hide-on-wide" id="pst-primary-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item">
+<nav>
+<ul class="bd-navbar-elements navbar-nav">
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item">
+<button aria-label="Color mode" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" data-bs-placement="bottom" data-bs-title="Color mode" data-bs-toggle="tooltip">
+<i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+<i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+<i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+</button></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link pst-navbar-icon" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/XgenTimeSeries/xgen-timeseries" rel="noopener" target="_blank" title="GitHub"><i aria-hidden="true" class="fa-brands fa-github fa-lg"></i>
+<span class="sr-only">GitHub</span></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+<div class="sidebar-primary-item">
+<div class="flat" data-ea-manual="true" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" id="ethical-ad-placement">
+</div></div>
+</div>
+</div>
+<main class="bd-main" id="main-content" role="main">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumb" class="d-print-none">
+<ul class="bd-breadcrumbs">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active"><span class="ellipsis">eHabitat Archive</span></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section id="ehabitat-archive">
+<span id="archive"></span><h1>eHabitat Archive<a class="headerlink" href="#ehabitat-archive" title="Link to this heading">#</a></h1>
+<table id="customers">
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Frequency</th>
+<th>Duration</th>
+<th>Type</th>
+<th>Location</th>
+<th>Measurements</th>
+<th>Download <svg class="bi bi-download" fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"> <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path> <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path> </svg> </th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eHabitat-ESS(Ours)</td>
+<td>1Hz</td>
+<td>6 month</td>
+<td>Residential</td>
+<td>France</td>
+<td>I,V, P,Q, S</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://eHabitattimeseries.github.io/eHabitat-timeseries/ess_datasets/index.html" target="_blank"> [1]</a> </td>
+</tr>
+<tr>
+<td>IDEAL</td>
+<td>1Hz</td>
+<td>18 month</td>
+<td>Residential</td>
+<td>UK</td>
+<td>P, S</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://datashare.ed.ac.uk/handle/10283/3647" target="_blank"> [2]</a> </td>
+</tr>
+<tr>
+<td>Enertalk</td>
+<td>15 Hz</td>
+<td>3 day</td>
+<td>Residential</td>
+<td>South Korea</td>
+<td>P,Q</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://www.nature.com/articles/s41597-019-0212-5" target="_blank"> [3]</a> </td>
+</tr>
+<tr>
+<td>LIT</td>
+<td>15 kHz</td>
+<td>30 sec</td>
+<td>Residential</td>
+<td>Brazil</td>
+<td>P, S</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://pessoal.dainf.ct.utfpr.edu.br/douglasrenaux/LIT_Dataset/" target="_blank"> [4]</a> </td>
+</tr>
+<tr>
+<td>AMPds</td>
+<td>0.1 mHz</td>
+<td>2 years</td>
+<td>Residential</td>
+<td>Canada</td>
+<td>P, S,I</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="http://ampds.org/" target="_blank"> [5]</a> </td>
+</tr>
+<tr>
+<td>COOLL</td>
+<td>100 kHz</td>
+<td>6 sec</td>
+<td>Individual appliance</td>
+<td>France</td>
+<td>I,V</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://coolldataset.github.io/" target="_blank"> [6]</a> </td>
+</tr>
+<tr>
+<td>WHITED</td>
+<td>44 kHz</td>
+<td>5 sec</td>
+<td>Individual appliance</td>
+<td>Multiples</td>
+<td>I</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://www.cs.cit.tum.de/dis/resources/whited/" target="_blank"> [7]</a> </td>
+</tr>
+<tr>
+<td>REFIT</td>
+<td>1 Hz</td>
+<td>4+ years</td>
+<td>Residential</td>
+<td>US</td>
+<td>P</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://pureportal.strath.ac.uk/en/datasets/refit-electrical-load-measurements-cleaned" target="_blank"> [8]</a> </td>
+</tr>
+<tr>
+<td>Dataport</td>
+<td>1 Hz</td>
+<td>4+ years</td>
+<td>Residential</td>
+<td>US</td>
+<td>P,S</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://ieee-dataport.org/" target="_blank"> [9]</a> </td>
+</tr>
+<tr>
+<td>UK-DALE</td>
+<td>16 kHz</td>
+<td>2 years</td>
+<td>Residential</td>
+<td>UK</td>
+<td>I,V, P,Q, S</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://www.nature.com/articles/sdata20157" target="_blank"> [10]</a> </td>
+</tr>
+<tr>
+<td>DRED</td>
+<td>1 Hz</td>
+<td>6 month</td>
+<td>Residential</td>
+<td>Netherlands</td>
+<td>P</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://www.st.ewi.tudelft.nl/~akshay/dred/" target="_blank"> [11]</a> </td>
+</tr>
+<tr>
+<td>PLAID</td>
+<td>30 kHz</td>
+<td>5 sec</td>
+<td>Individual appliance</td>
+<td>US</td>
+<td>I,V</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://energy.duke.edu/content/plug-load-appliance-identification-dataset-plaid" target="_blank"> [12]</a> </td>
+</tr>
+<tr>
+<td>ECO</td>
+<td>1227 kHz</td>
+<td>6 sec</td>
+<td>Residential</td>
+<td>Switzerland</td>
+<td>I,V, P, pf</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://sites.google.com/view/activities-prediction-202b/project-homepage/eco-dataset" target="_blank"> [13]</a> </td>
+</tr>
+<tr>
+<td>iAWE</td>
+<td>1 Hz</td>
+<td>73 day</td>
+<td>Residential</td>
+<td>India</td>
+<td>I, V, P, Q, S, pf</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://iawe.github.io/" target="_blank"> [14]</a> </td>
+</tr>
+<tr>
+<td>Tracebase</td>
+<td>1 Hz</td>
+<td>1 day</td>
+<td>Individual appliance</td>
+<td>Germany</td>
+<td>P</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://github.com/areinhardt/tracebase" target="_blank"> [15]</a> </td>
+</tr>
+<tr>
+<td>REDD</td>
+<td>16.5 kHz</td>
+<td>19 day</td>
+<td>Residential</td>
+<td>US</td>
+<td>I, V, P</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://tokhub.github.io/dbecd/links/redd.html" target="_blank"> [16]</a> </td>
+</tr>
+<tr>
+<td>BLUED</td>
+<td>12 kHz</td>
+<td>1 week</td>
+<td>Residential</td>
+<td>US</td>
+<td>I,V</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td><a href="https://tokhub.github.io/dbecd/links/Blued.html" target="_blank"> [17]</a> </td>
+</tr>
+<tr>
+<td>Electricity AP</td>
+<td>16mHz</td>
+<td>4 month</td>
+<td>Residential</td>
+<td>Belgium</td>
+<td>P</td>
+<td><a href="https://github.com/oublalkhalid/eHabitat/raw/main/_static/eHabitat-001145324.hdf5">HDF5 file</a></td>
+<td> <a href="https://opennetzero.org/dataset/electricity-maps" target="_blank"> [18]</a> </td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">eHabitat.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">load</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s2">"uk-dale"</span><span class="p">,</span> <span class="n">streaming</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</article>
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+</div>
+</footer>
+</div>
+<dialog id="pst-secondary-sidebar-modal"></dialog>
+<div class="bd-sidebar-secondary bd-toc" id="pst-secondary-sidebar"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+<div class="sidebar-secondary-item">
+<div class="tocsection editthispage">
+<a href="https://github.com/eHabitat-devs/eHabitat/edit/main/docs/source/archive/index.md">
+<i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+</div>
+</div>
+<div class="sidebar-secondary-item">
+<div aria-label="source link" role="note">
+<h3>This Page</h3>
+<ul class="this-page-menu">
+<li><a href="../_sources/archive/index.md.txt" rel="nofollow">Show Source</a></li>
+</ul>
+</div></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script defer="" src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer="" src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+<script>
+  $(document).ready(function () {
+    const content = $('<div class="alert-danger">eHabitat docs will now be available at <a href="https://python.eHabitat.org">python.eHabitat.org</a>!</div>')
+    $('#banner').append(content);
+  })
+</script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023, eHabitat devs.
+      <br/>
+</p>
+</div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item">
+<p class="theme-version">
+<!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>
